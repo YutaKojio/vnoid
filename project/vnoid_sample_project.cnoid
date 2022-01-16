@@ -92,10 +92,10 @@ items:
           class: BodyItem
           is_checked: true
           data: 
-            file: "${SHARE}/model/sample_robot/sample_robot.body"
+            file: "${SHARE}/model/sr_robot/sr_robot.body"
             format: CHOREONOID-BODY
-            currentBaseLink: "HIPS"
-            rootPosition: [ 0, 0, 0.9 ]
+            currentBaseLink: "WAIST"
+            rootPosition: [ 0, 0, 0.75 ]
             rootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 
@@ -108,7 +108,7 @@ items:
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-            initialRootPosition: [ 0, 0, 0.9 ]
+            initialRootPosition: [ 0, 0, 0.75 ]
             initialRootAttitude: [ 
               1, 0, 0, 
               0, 1, 0, 

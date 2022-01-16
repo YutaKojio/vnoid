@@ -126,11 +126,15 @@ void IkSolver::Comp(const Param& param, const Centroid& centroid, const Base& ba
     for(int i = 0; i < 2; i++){
         pos_local = base.ori_ref.conjugate()*(foot[i].pos_ref - foot[i].ori_ref*param.ankle_to_foot[i] - centroid.com_pos_ref) - param.base_to_hip[i];
         ori_local = base.ori_ref.conjugate()* foot[i].ori_ref;
+	pos_local += foot_off;
 
         CompLegIk(pos_local, ori_local, param.upper_leg_length, param.lower_leg_length, q);
 
         for(int j = 0; j < 6; j++){
-            joint[param.leg_joint_index[i] + j].q_ref = q[j];
+	  int tmp_idx = j;
+	  if (tmp_idx == 1) tmp_idx += 1;
+	  if (tmp_idx == 2) tmp_idx -= 1;
+            joint[param.leg_joint_index[i] + tmp_idx].q_ref = q[j];
         }
     }
 }

@@ -23,6 +23,7 @@ class Joint;
  */
 class IkSolver{
 public:
+  Vector3 foot_off;
     // IK from hip to ankle
 	void CompLegIk(const Vector3& pos, const Quaternion& ori, double l1, double l2, double* q);
 
